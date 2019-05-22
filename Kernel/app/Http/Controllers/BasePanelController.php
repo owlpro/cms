@@ -2,27 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Str;
-use League\Flysystem\Adapter\Local;
+use App\Module\PanelController;
 use Modules\Locale\Entities\Locale;
 use Modules\Users\Entities\User;
-use Nwidart\Modules\Facades\Module;
 
-class BasePanelController extends Controller
+class BasePanelController extends PanelController
 {
 
     public function index() {
+
         $this->authorize('seeAdminPanel', User::class);
-        $modules = $this->getModules();
-        return view('admin_panel_templates.default.dashboard', compact('modules'));
+
+        return redirect(env('ADMINISTRATOR_PANEL_URL').'/dashboard');
 
     }
 
-    private function getModules() {
-        return array_keys(Module::all());
-    }
 
     public function changeLocale($locale) {
         $locales = Locale::pluck('symbol')->toArray();

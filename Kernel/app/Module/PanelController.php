@@ -2,7 +2,8 @@
 
 namespace App\Module;
 
-use Illuminate\Routing\Controller;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\View;
 use Modules\Locale\Entities\Locale;
@@ -26,8 +27,11 @@ class PanelController extends Controller
 
     private function defineModuleTabsVariables() {
         $module = Request::segment(2);
-        View::share('current_module', $module);
-        View::share('name', $module);
+        if(!is_null($module)){
+            View::share('current_module', $module);
+            View::share('name', $module);
+        }
+
     }
 
     private function defineChangeLocaleVariables() {

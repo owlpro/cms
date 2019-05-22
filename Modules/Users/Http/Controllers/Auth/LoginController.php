@@ -34,7 +34,7 @@ class LoginController extends Controller
 
     public function redirectPath() {
         if (auth()->user()->can('seeAdminPanel', User::class)) {
-            return env('ADMINISTRATOR_PANEL_URL', 'panel');
+            return env('ADMINISTRATOR_PANEL_URL', 'panel') . '/dashboard';
         }
         return '/home';
     }
