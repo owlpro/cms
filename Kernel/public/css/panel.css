@@ -1,0 +1,119 @@
+/**{*/
+/*    direction:rtl;*/
+/*}*/
+* {
+    font-family: vazir !important;
+    font-size: 16px;
+}
+
+body, html {
+    height: 100%;
+    background-color: #999fa9;
+}
+
+body > .container-fluid {
+    height: 100%;
+    padding: 0;
+}
+
+.cms_content {
+    height: 95%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.cms_content > aside.right {
+    background-color: #f8f8f8;
+    width: 10%;
+    display: block;
+    height: 100%;
+}
+
+.cms_content > aside.left {
+    width: 100%;
+    padding: 15px;
+    background-color: #343a40 !important;
+}
+
+.modules {
+    padding: 0;
+    margin: 0;
+}
+
+.module {
+    list-style: none;
+    text-align: center;
+    border-bottom: 1px solid silver;
+}
+
+.module > a {
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+}
+
+.module > a:hover {
+    background-color: gray;
+    color: white;
+}
+
+.top_panel {
+    background-color: #f0f0f0;
+    text-align: center;
+    min-height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top_panel > div {
+    width: 100%;
+}
+
+.nav-tabs {
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: -15px;
+    padding-top: 10px;
+    padding-right: 0;
+    background-color: white;
+    border-top: 3px solid #343a40;
+}
+
+.nav-tabs .nav-link {
+    border: unset !important;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-border-radius: unset !important;
+    -moz-border-radius: unset !important;
+    border-radius: unset !important;
+    border-top: 3px solid silver !important;
+    color:#343a40;
+    cursor:pointer;
+    min-width: 120px;
+    height: 45px;
+    padding: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.nav-tabs .nav-link{
+    border-right:1px solid silver !important;
+}
+.nav-tabs > .nav-item:first-child .nav-link{
+    border-right:unset !important;
+}
+.nav-tabs .nav-link:hover {
+    border-top: 3px solid gray !important;
+}
+
+.nav-tabs .nav-link.active {
+    color: #dee2e6 !important;
+    background-color: #343a40 !important;
+    border: unset;
+    border-top: 3px solid gray !important;
+}

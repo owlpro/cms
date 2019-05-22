@@ -1,0 +1,16 @@
+<?php
+
+namespace $CLASS_NAMESPACE$;
+
+use App\Module\PanelController;
+
+class $CLASS$ extends PanelController
+{
+    public function create(){
+        return view('$LOWER_NAME$::administrator.create');
+    }
+
+    public function list(){
+        return view('$LOWER_NAME$::administrator.list');
+    }
+}

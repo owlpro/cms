@@ -1,0 +1,11 @@
+<?php
+
+return [
+    'name' => '$STUDLY_NAME$',
+    'trans_name' => 'panel.module.$LOWER_NAME$',
+    'tabs' => [
+        //segment => Trans Key Or String
+        'list' => 'panel.list',
+        'create' => 'panel.create'
+    ],
+];

@@ -1,0 +1,8 @@
+.cms_content > aside.left {
+    direction:rtl;
+    text-align:right;
+}
+.cms_content {
+    display:flex;
+    flex-direction:row;
+}

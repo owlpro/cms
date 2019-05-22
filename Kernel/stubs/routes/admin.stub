@@ -1,0 +1,8 @@
+<?php
+
+Route::get('/','$STUDLY_NAME$PanelController@list');
+
+Route::get('/list','$STUDLY_NAME$PanelController@list');
+
+Route::get('/create','$STUDLY_NAME$PanelController@create');
+

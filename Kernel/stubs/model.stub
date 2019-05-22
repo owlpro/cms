@@ -1,0 +1,17 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Illuminate\Database\Eloquent\Model;
+
+/**
+ * @method static \Illuminate\Database\Eloquent\Builder|\$NAMESPACE$\$CLASS$ newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\$NAMESPACE$\$CLASS$ newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\$NAMESPACE$\$CLASS$ query()
+ * @mixin \Eloquent
+ */
+
+class $CLASS$ extends Model
+{
+    protected $fillable = $FILLABLE$;
+}
