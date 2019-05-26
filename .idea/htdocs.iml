@@ -69,6 +69,7 @@
       <excludeFolder url="file://$MODULE_DIR$/Kernel/vendor/sebastian/version" />
       <excludeFolder url="file://$MODULE_DIR$/Kernel/vendor/seld/jsonlint" />
       <excludeFolder url="file://$MODULE_DIR$/Kernel/vendor/seld/phar-utils" />
+      <excludeFolder url="file://$MODULE_DIR$/Kernel/vendor/spatie/laravel-permission" />
       <excludeFolder url="file://$MODULE_DIR$/Kernel/vendor/swiftmailer/swiftmailer" />
       <excludeFolder url="file://$MODULE_DIR$/Kernel/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/Kernel/vendor/symfony/contracts" />

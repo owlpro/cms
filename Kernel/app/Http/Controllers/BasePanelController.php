@@ -2,30 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Module\PanelController;
-use Modules\Locale\Entities\Locale;
-use Modules\Users\Entities\User;
 
-class BasePanelController extends PanelController
+
+use App\InternalModels\Locale\Locale;
+
+class BasePanelController extends Controller
 {
-
-    public function index() {
-
-        $this->authorize('seeAdminPanel', User::class);
-
-        return redirect(env('ADMINISTRATOR_PANEL_URL').'/dashboard');
-
-    }
-
 
     public function changeLocale($locale) {
         $locales = Locale::pluck('symbol')->toArray();
 
-        if(in_array($locale, $locales)){
+        if (in_array($locale, $locales)) {
             session(['locale' => $locale]);
             return redirect()->back();
         } else {
-            return Response('Locale Not Found!',404);
+            return Response('Locale Not Found!', 404);
         }
 
     }

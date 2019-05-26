@@ -4,39 +4,77 @@ namespace App\Module;
 
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Request;
+use App\InternalModels\Locale\Locale;
 use Illuminate\Support\Facades\View;
-use Modules\Locale\Entities\Locale;
-use Modules\Users\Entities\User;
+use Illuminate\Support\Str;
 use Nwidart\Modules\Facades\Module;
 
 class PanelController extends Controller
 {
     public function __construct() {
 
-        $this->defineModulesVariable();
+        $this->assign_languages();
 
-        $this->defineModuleTabsVariables();
+        $this->assign_list();
 
-        $this->defineChangeLocaleVariables();
-    }
-
-    private function defineModulesVariable() {
-        View::share('modules', array_keys(Module::all()));
-    }
-
-    private function defineModuleTabsVariables() {
-        $module = Request::segment(2);
-        if(!is_null($module)){
-            View::share('current_module', $module);
-            View::share('name', $module);
-        }
+        View::share('module', Request()->segment(3));
 
     }
 
-    private function defineChangeLocaleVariables() {
+    private function assign_languages() {
         $locales = Locale::where('active', 1)->select(['symbol', 'title'])->get();
         View::share('languages', $locales);
 
+    }
+
+    private function assign_list() {
+        $list = [];
+        switch (Str::lower(Request()->segment(2))) {
+            case "dashboard":
+                $list = [];
+                break;
+            case "module":
+                $list = $this->getModuleList();
+                break;
+            case "system":
+                $list = $this->getSystemList();
+                break;
+            case "setting":
+                $list = $this->getSettingList();
+                break;
+        }
+
+        View::share('list', $list);
+    }
+
+    private function getModuleList() {
+        return collect(Module::all())->map(function($item) {
+            return [
+                'url' => $this->generateLink('module', $item->name),
+                'title' => Str::lower($item->name),
+            ];
+        });
+    }
+
+    private function getSystemList() {
+        return [
+            [
+                'url' => $this->generateLink('system', 'locale'),
+                'title' => 'locale'
+            ]
+        ];
+    }
+
+    private function getSettingList() {
+        return [
+            [
+                'url' => $this->generateLink('setting', 'colors'),
+                'title' => 'color'
+            ],
+        ];
+    }
+
+    private function generateLink($part, $segment) {
+        return url(env('ADMINISTRATOR_PANEL_URL', '/panel') . "/" . Str::lower($part) . "/" . Str::lower($segment));
     }
 }

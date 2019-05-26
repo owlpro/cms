@@ -1,4 +1,4 @@
-@extends('admin_panel_templates.default.index')
+@extends('administrator.index')
 
 @section('module_assets')
     {{--Use Js And Css Files For All Tabs On This Section--}}

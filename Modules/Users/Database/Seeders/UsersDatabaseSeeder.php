@@ -19,11 +19,22 @@ class UsersDatabaseSeeder extends Seeder
 
         // $this->call("OthersTableSeeder");
         User::truncate();
-        User::create([
-           'name' => 'owl pro',
-           'type' => User::SUPPER_ADMIN_TYPE,
-           'email' => 'mdpro.smm@gmail.com',
-           'password' => bcrypt('123456')
-        ]);
+
+        $this->create($this->getData());
+    }
+
+    private function create($data){
+        foreach($data as $item){
+            User::create($item);
+        }
+    }
+
+    private function getData(){
+        return [
+            ['name' => 'owlpro' , 'email' => 'mdpro.smm@gmail.com','password' => bcrypt('123456')],
+            ['name' => 'user1' , 'email' => 'user1@gmail.com','password' => bcrypt('123456')],
+            ['name' => 'user2' , 'email' => 'user2@gmail.com','password' => bcrypt('123456')],
+            ['name' => 'user3' , 'email' => 'user3@gmail.com','password' => bcrypt('123456')],
+        ];
     }
 }

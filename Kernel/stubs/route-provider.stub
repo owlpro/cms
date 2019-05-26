@@ -71,7 +71,7 @@ class $CLASS$ extends ServiceProvider
 
     protected function mapAdminRoutes()
     {
-        Route::prefix(env('ADMINISTRATOR_PANEL_URL','panel').'/$LOWER_NAME$')
+        Route::prefix(env('ADMINISTRATOR_PANEL_URL','/panel').'/module/$LOWER_NAME$')
             ->middleware(['web','auth'])
             ->namespace($this->moduleNamespace)
             ->group(__DIR__ . '/../Routes/admin.php');

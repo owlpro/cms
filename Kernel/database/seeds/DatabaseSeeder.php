@@ -12,9 +12,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run() {
         Schema::disableForeignKeyConstraints();
+
+        $this->call(LocaleLocalesTableSeeder::class);
+        $this->call(LocalePanelLiteratureTableSeeder::class);
+        $this->call(LocaleSiteLiteratureTableSeeder::class);
+
         foreach ($this->findModuleSeeders() as $seed) {
             $this->call($this->replaceSeederToCallableAddres($seed));
         }
+
         Schema::enableForeignKeyConstraints();
     }
 

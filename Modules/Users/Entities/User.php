@@ -5,6 +5,8 @@ namespace Modules\Users\Entities;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
+
 /**
  * App\users
  *
@@ -17,6 +19,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @property string|null $remember_token
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Spatie\Permission\Models\Permission[] $permissions
+ * @property-read \Spatie\Permission\Models\Role[] $roles
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Users\Entities\User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Users\Entities\User newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Users\Entities\User query()
@@ -33,23 +37,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  */
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, HasRoles;
 
-    const SUPPER_ADMIN_TYPE = 'supper_admin';
-    const ADMIN_TYPE = 'admin';
-    const USER_TYPE = 'user';
-
-    const TYPES = [
-        self::SUPPER_ADMIN_TYPE,
-        self::ADMIN_TYPE,
-        self::USER_TYPE,
-    ];
-
-    const ACCESS_TO_ADMIN_PANEL = [
-        self::SUPPER_ADMIN_TYPE,
-        self::ADMIN_TYPE,
-    ];
-
+    protected $guard_name = 'web';
 
     /**
      * The attributes that are mass assignable.
@@ -57,7 +47,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'type'
+        'name', 'email', 'password',
     ];
 
     /**

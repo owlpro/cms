@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\InternalModels\Locale\Locale;
 use Closure;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Str;
@@ -20,8 +21,17 @@ class LocaleMiddleware
             session('locale', 'fa');
             App::setLocale('fa');
         } else {
-            App::setLocale(Str::lower(session('locale')));
+            if ($this->hasLocale(session('locale'))) {
+                $locale = Str::lower(session('locale'));
+            } else {
+                $locale = 'fa';
+            }
+            App::setLocale($locale);
         }
         return $next($request);
+    }
+
+    private function hasLocale($symbol) {
+        return Locale::where('symbol', Str::lower($symbol))->count();
     }
 }

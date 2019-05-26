@@ -1,13 +1,21 @@
 <?php
 
-use Modules\Locale\Entities\Locale;
-use Modules\Locale\Entities\PanelLiterature;
 
+use App\InternalModels\Locale\Locale;
+use App\InternalModels\Locale\PanelLiterature;
 
 if (!function_exists('module_asset')) {
     function module_asset($module, $path) {
         if ($path[0] == "/") $path = substr($path, 1);
         return url('/Modules/' . ucfirst($module) . '/Public/' . $path);
+    }
+}
+
+
+if (!function_exists('internal_module_asset')) {
+    function internal_module_asset($module, $path) {
+        if ($path[0] == "/") $path = substr($path, 1);
+        return url('/Kernel/resources/views/administrator/InternalModules/' . ucfirst($module) . '/assets/' . $path);
     }
 }
 

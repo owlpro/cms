@@ -1,11 +1,20 @@
 <?php
 
 return [
+    // Module Name
     'name' => '$STUDLY_NAME$',
+
+    // Literature ( Title )
     'trans_name' => 'panel.module.$LOWER_NAME$',
+
+    // Font Awesome Icon Class
+    'icon' => 'fal fa-smile-beam',
+
+    // Module Tabs
     'tabs' => [
-        //segment => Trans Key Or String
+        //Segment => Literature
         'list' => 'panel.list',
         'create' => 'panel.create'
     ],
 ];
+

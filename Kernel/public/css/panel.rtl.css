@@ -1,8 +1,47 @@
 .cms_content > aside.left {
-    direction:rtl;
-    text-align:right;
+    direction: rtl;
+    text-align: right;
+    margin-left: 0;
+    margin-right: 30px;
 }
+
 .cms_content {
-    display:flex;
-    flex-direction:row;
+    direction: rtl;
+    float:left;
+}
+
+.top_access > ul {
+    direction: rtl;
+    margin-right: 20px;
+    margin-left: 0;
+}
+
+.top_panel {
+    flex-direction: row;
+}
+
+.module_btn {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: unset;
+}
+
+.panel_right_item > a:hover > i {
+    transform:translate(-8px);
+    color:var(--blue);
+}
+.panel_list {
+    left:unset;
+    right:25px;
+}
+.simplebar-track {
+    right:unset;
+    left:0;
+}
+.simplebar-scrollbar {
+    right:0;
+}
+.top_access > ul > li > a > i {
+    margin-top:unset;
 }

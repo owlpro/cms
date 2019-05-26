@@ -33,6 +33,7 @@ class LoginController extends Controller
     }
 
     public function redirectPath() {
+        // TODO  change seeAdminPanel Policy
         if (auth()->user()->can('seeAdminPanel', User::class)) {
             return env('ADMINISTRATOR_PANEL_URL', 'panel') . '/dashboard';
         }

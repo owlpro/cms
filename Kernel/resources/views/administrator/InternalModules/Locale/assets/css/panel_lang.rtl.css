@@ -1,0 +1,5 @@
+.col-9.lang_uniq {
+    display: flex;
+    align-items: center;
+    flex-direction:row;
+}

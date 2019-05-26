@@ -1,63 +1,148 @@
-@font-face {  font-family: Vazir;  src: url('../fonts/Vazir.eot');  src: url('../fonts/Vazir.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir.woff2') format('woff2'), url('../fonts/Vazir.woff') format('woff'), url('../fonts/Vazir.ttf') format('truetype');  font-weight: normal;  }  @font-face {  font-family: Vazir;  src: url('../fonts/Vazir-Bold.eot');  src: url('../fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir-Bold.woff2') format('woff2'), url('../fonts/Vazir-Bold.woff') format('woff'), url('../fonts/Vazir-Bold.ttf') format('truetype');  font-weight: bold;  }  @font-face {  font-family: Vazir;  src: url('../fonts/Vazir-Light.eot');  src: url('../fonts/Vazir-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir-Light.woff2') format('woff2'), url('../fonts/Vazir-Light.woff') format('woff'), url('../fonts/Vazir-Light.ttf') format('truetype');  font-weight: 300;  }  @font-face {  font-family: Vazir;  src: url('../fonts/Vazir-Medium.eot');  src: url('../fonts/Vazir-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir-Medium.woff2') format('woff2'), url('../fonts/Vazir-Medium.woff') format('woff'), url('../fonts/Vazir-Medium.ttf') format('truetype');  font-weight: 500;  }  @font-face {  font-family: Vazir;  src: url('../fonts/Vazir-Thin.eot');  src: url('../fonts/Vazir-Thin.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir-Thin.woff2') format('woff2'), url('../fonts/Vazir-Thin.woff') format('woff'), url('../fonts/Vazir-Thin.ttf') format('truetype');  font-weight: 100;  }  @font-face {  font-family: Vazir;  src: url('../fonts/Vazir-Black.eot');  src: url('../fonts/Vazir-Black.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir-Black.woff2') format('woff2'), url('../fonts/Vazir-Black.woff') format('woff'), url('../fonts/Vazir-Black.ttf') format('truetype');  font-weight: 900;  }
+:root {
+    --black: #545454;
+    --blue: #007bff;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir.eot');
+    src: url('../fonts/Vazir.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir.woff2') format('woff2'), url('../fonts/Vazir.woff') format('woff'), url('../fonts/Vazir.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir-Bold.eot');
+    src: url('../fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir-Bold.woff2') format('woff2'), url('../fonts/Vazir-Bold.woff') format('woff'), url('../fonts/Vazir-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir-Light.eot');
+    src: url('../fonts/Vazir-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir-Light.woff2') format('woff2'), url('../fonts/Vazir-Light.woff') format('woff'), url('../fonts/Vazir-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir-Medium.eot');
+    src: url('../fonts/Vazir-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir-Medium.woff2') format('woff2'), url('../fonts/Vazir-Medium.woff') format('woff'), url('../fonts/Vazir-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir-Thin.eot');
+    src: url('../fonts/Vazir-Thin.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir-Thin.woff2') format('woff2'), url('../fonts/Vazir-Thin.woff') format('woff'), url('../fonts/Vazir-Thin.ttf') format('truetype');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir-Black.eot');
+    src: url('../fonts/Vazir-Black.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir-Black.woff2') format('woff2'), url('../fonts/Vazir-Black.woff') format('woff'), url('../fonts/Vazir-Black.ttf') format('truetype');
+    font-weight: 900;
+}
 
 body, html {
     height: 100%;
-    background-color: #999fa9;
 }
 
-body > .container-fluid {
+body {
+    background-image: url("/Kernel/public/images/panel-bg5.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+}
+
+.container-fluid.main_container {
     height: 100%;
     padding: 0;
 }
 
+a:hover {
+    text-decoration: none !important;
+}
+
 .cms_content {
-    height: 95%;
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-.cms_content > aside.right {
-    background-color: #f8f8f8;
-    width: 10%;
-    display: block;
-    height: 100%;
-}
-
-.cms_content > aside.left {
-    width: 100%;
+    background-color: #f9f9f98a;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    text-align: initial;
+    margin: 25px;
+    position: relative;
+    top: 40px;
+    width: calc(100% - 325px);
+    float: right;
     padding: 15px;
-    background-color: #343a40 !important;
+    min-height: calc(100% - 95px);
 }
 
-.modules {
+.panel_list {
+    width: 250px;
+    display: block;
+    background-color: #f9f9f9;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    position: fixed;
+    top: 65px;
+    left: 25px;
+    bottom: 30px;
+    z-index: 5;
+    border-top: 2px solid var(--blue);
+}
+
+
+.panel_right_list {
     padding: 0;
     margin: 0;
 }
 
-.module {
+.panel_right_item {
     list-style: none;
     text-align: center;
     border-bottom: 1px solid silver;
 }
 
-.module > a {
-    display: block;
-    padding: 5px 0;
+.panel_right_item > a {
+    padding: 5px;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--black);
+    justify-content: space-between;
 }
 
-.module > a:hover {
-    background-color: gray;
-    color: white;
+.panel_right_item > a:hover {
+    color: var(--black)
+}
+
+.panel_right_item > a > i {
+    font-size: 23px;
+    -webkit-transition: transform 0.3s;
+    -moz-transition: transform 0.3s;
+    -o-transition: transform 0.3s;
+    transition: transform 0.3s;
+}
+
+.panel_right_item > a:hover > i {
+    transform: translate(8px);
+    color: var(--blue);
 }
 
 .top_panel {
-    background-color: #f0f0f0;
+    background-color: #f9f9f9;
     text-align: center;
-    min-height: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row-reverse;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
 }
 
 .top_panel > div {
@@ -68,23 +153,20 @@ body > .container-fluid {
     margin-right: -15px;
     margin-left: -15px;
     margin-top: -15px;
-    padding-top: 10px;
     padding-right: 0;
+    border: unset !important;
     background-color: white;
-    border-top: 3px solid #343a40;
 }
 
 .nav-tabs .nav-link {
     border: unset !important;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
     -webkit-border-radius: unset !important;
     -moz-border-radius: unset !important;
     border-radius: unset !important;
-    border-top: 3px solid silver !important;
     color: #343a40;
     cursor: pointer;
     min-width: 120px;
@@ -97,20 +179,93 @@ body > .container-fluid {
 }
 
 .nav-tabs .nav-link {
-    border-right: 1px solid silver !important;
+    border-left: 1px solid #dee2e6 !important;
+    border-bottom: 1px solid #dee2e6 !important;
 }
 
 .nav-tabs > .nav-item:first-child .nav-link {
-    border-right: unset !important;
+    /*border-left: unset !important;*/
 }
 
 .nav-tabs .nav-link:hover {
-    border-top: 3px solid gray !important;
 }
 
 .nav-tabs .nav-link.active {
-    color: #dee2e6 !important;
-    background-color: #343a40 !important;
-    border: unset;
-    border-top: 3px solid gray !important;
+    color: var(--blue) !important;
+    border-bottom-color: transparent !important;
+}
+
+.top_access {
+}
+
+.top_access > ul {
+    display: flex;
+    padding: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.top_access > ul > li {
+    list-style-type: none;
+    margin: 2px;
+}
+
+.top_access > ul > li > a {
+    display: flex;
+    /*background-color:silver;*/
+    padding: 7px;
+    min-width: 120px;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    text-decoration: none;
+    color: var(--black);
+    border-radius: 4px;
+    -webkit-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    -ms-transition: background-color 0.2s;
+    -o-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+}
+
+.top_access > ul > li > a:hover {
+    background-color: #e6e6e6;
+    color: #1a1a1a;
+}
+
+.top_access > ul > li > a > i {
+    color: #007bff;
+    font-size: 23px;
+    margin-top: -8px;
+}
+
+.select_a_module {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.select_a_module > span {
+    color: gray;
+    font-size: 30px;
+}
+
+.module_btn {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    z-index:5;
+}
+
+.cms_module_tabs {
+    position: sticky;
+    top: 42px;
+    z-index: 5;
+    border-top: 2px solid var(--blue) !important;
+}
+
+.simplebar-content {
+    height: 100%;
 }
